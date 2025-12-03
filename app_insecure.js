@@ -115,8 +115,9 @@ app.get('/dashboard', (req, res) => {
 // create post function that stores content unsanitised
 app.get('/posts/create', (req, res) => {
   if (!req.session.user) return res.redirect('/login');
-  res.render('create', { error: null });
+  res.render('create', { error: null, post: null });
 });
+
 
 app.post('/posts/create', (req, res) => {
   if (!req.session.user) return res.redirect('/login');
