@@ -1,0 +1,18 @@
+<%- include('layout', { body: '' }) %>
+<h1>Register</h1>
+
+<% if (error) { %>
+  <p style="color:red;"><%= error %></p>
+<% } %>
+
+<form method="POST" action="/register">
+  <label>Username</label><br/>
+  <input type="text" name="username"/><br/>
+  <label>Email</label><br/>
+  <input type="email" name="email"/><br/>
+  <label>Password</label><br/>
+  <input type="password" name="password"/><br/>
+  <label>Role (optional)</label><br/>
+  <input type="text" name="role" placeholder="user or admin"/><br/><br/>
+  <button type="submit">Register</button>
+</form>

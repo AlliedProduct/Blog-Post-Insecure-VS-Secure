@@ -1,0 +1,12 @@
+<%- include('layout', { body: '' }) %>
+
+<h1><%= post ? 'Edit Post' : 'Create Post' %></h1>
+
+<% if (error) { %>
+  <p style="color:red;"><%= error %></p>
+<% } %>
+
+<form method="POST" action="<%= post ? '/posts/edit/' + post.id : '/posts/create' %>">
+  <textarea name="content" rows="5" cols="60"><%= post ? post.content : '' %></textarea><br/><br/>
+  <button type="submit">Save</button>
+</form>

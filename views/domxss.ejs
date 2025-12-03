@@ -1,0 +1,18 @@
+<%- include('layout', { body: '' }) %>
+
+<h1>DOM XSS Demo</h1>
+
+<p>This page reads the <code>msg</code> parameter from the URL and writes it into the page.</p>
+<p>Example: <code>?msg=&lt;img src=x onerror=alert(1)&gt;</code></p>
+
+<div id="output"></div>
+
+<script>
+  // directly uses query in innerHTML
+  const params = new URLSearchParams(window.location.search);
+  const msg = params.get('msg');
+  if (msg) {
+    // dom based xss
+    document.getElementById('output').innerHTML = msg;
+  }
+</script>
