@@ -1,0 +1,12 @@
+<%- include('layout', { body: '' }) %>
+
+<h1>Search</h1>
+
+<form method="GET" action="/search">
+  <input type="text" name="q" value="<%= q %>"/>
+  <button type="submit">Search</button>
+</form>
+
+<% if (q) { %>
+  <p>Results for: <span><%= q %></span></p>
+<% } %>

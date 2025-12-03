@@ -1,0 +1,28 @@
+<%- include('layout', { body: '' }) %>
+
+<h1>Dashboard</h1>
+
+<h2>All Posts</h2>
+
+<% posts.forEach(function(post) { %>
+  <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+    <strong>Author:</strong> <%= post.username %><br/>
+    <strong>Created:</strong> <%= post.created_at %><br/>
+    <p>
+    <!-- now prevents stored xss -->
+    <%= post.content %>
+    </p>
+
+
+    <% if (currentUser && (currentUser.id === post.user_id || currentUser.role === 'admin')) { %>
+      <form method="GET" action="/posts/edit/<%= post.id %>" style="display:inline;">
+        <button type="submit">Edit</button>
+      </form>
+      <form method="POST" action="/posts/delete/<%= post.id %>" style="display:inline;">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
+        <button type="submit">Delete</button>
+        </form>
+
+    <% } %>
+  </div> 
+<% }); %>

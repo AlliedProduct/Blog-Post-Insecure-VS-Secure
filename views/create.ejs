@@ -1,0 +1,5 @@
+<form method="POST" action="<%= post ? '/posts/edit/' + post.id : '/posts/create' %>">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
+  <textarea name="content" rows="5" cols="60"><%= post ? post.content : '' %></textarea>
+  ...
+</form>
