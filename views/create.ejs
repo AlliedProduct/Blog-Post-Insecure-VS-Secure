@@ -1,5 +1,18 @@
+<%- include('layout', { body: '' }) %>
+
+<h1><%= post ? 'Edit Post (Secure)' : 'Create Post (Secure)' %></h1>
+
+<% if (error) { %>
+  <p style="color:red;"><%= error %></p>
+<% } %>
+
 <form method="POST" action="<%= post ? '/posts/edit/' + post.id : '/posts/create' %>">
+  <!-- csrf token -->
   <input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
-  <textarea name="content" rows="5" cols="60"><%= post ? post.content : '' %></textarea>
-  ...
+
+  <label>Post Content</label><br/>
+  <!-- <%= %> escapes content which prevents stored XSS -->
+  <textarea name="content" rows="5" cols="60"><%= post ? post.content : '' %></textarea><br/><br/>
+
+  <button type="submit">Save</button>
 </form>

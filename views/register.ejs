@@ -1,4 +1,23 @@
+<%- include('layout', { body: '' }) %>
+
+<h1>Register (Secure Version)</h1>
+
+<% if (error) { %>
+  <p style="color:red;"><%= error %></p>
+<% } %>
+
 <form method="POST" action="/register">
+  <!-- csrf token -->
   <input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
-  ...
+
+  <label>Username</label><br/>
+  <input type="text" name="username"/><br/><br/>
+
+  <label>Email</label><br/>
+  <input type="email" name="email"/><br/><br/>
+
+  <label>Password</label><br/>
+  <input type="password" name="password"/><br/><br/>
+  
+  <button type="submit">Register</button>
 </form>
