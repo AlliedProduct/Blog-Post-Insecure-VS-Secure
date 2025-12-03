@@ -1,7 +1,7 @@
 {
   "name": "blogpost",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple blog post application demonstrating security best practices.",
   "main": "app_insecure.js",
   "scripts": {
     "start:insecure": "node app_insecure.js",

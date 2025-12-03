@@ -10,7 +10,7 @@ const db = require('./db');
 const app = express();
 const PORT = 3001; // different port than insecure app so i can run both at same time
 
-// views
+// views 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 

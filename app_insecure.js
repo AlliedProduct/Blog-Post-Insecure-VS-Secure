@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// insecure session config
+// insecure session config 
 app.use(session({
   secret: 'Eugene',  // hard coded secret
   resave: true,

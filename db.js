@@ -24,7 +24,7 @@ db.serialize(() => {
     )
   `);
 
-  // used in secure version for logging
+  // used in secure version for logging 
   db.run(`
     CREATE TABLE IF NOT EXISTS logs (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
