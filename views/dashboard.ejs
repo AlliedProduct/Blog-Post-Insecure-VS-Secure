@@ -5,11 +5,11 @@
 <p id="welcome-msg"></p>
 
 <script>
-  // welcome message that reads from URL
+    // welcome message that reads from URL
   const params = new URLSearchParams(window.location.search);
   const msg = params.get('welcome');
   if (msg) {
-    // dom xss, uses innerhtml with untrusted data
+    // dom based xss 
     document.getElementById('welcome-msg').innerHTML = msg;
   }
 </script>
