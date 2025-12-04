@@ -98,6 +98,13 @@ app.post('/login', (req, res) => {
 app.get('/dashboard', (req, res) => {
   if (!req.session.user) return res.redirect('/login');
 
+  // if no welcome param, redirect with default msg
+    if (!req.query.welcome) {
+    const defaultWelcome = 'Welcome!';
+    const encoded = encodeURIComponent(defaultWelcome);
+    return res.redirect('/dashboard?welcome=' + encoded);
+  }
+
   db.all(`
     SELECT posts.*, users.username
     FROM posts

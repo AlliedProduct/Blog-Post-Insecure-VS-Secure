@@ -3,13 +3,14 @@
 <h1>Dashboard</h1>
 
 <p>
-  <strong>Welcome message from URL:</strong>
+  <strong>Welcome message:</strong>
   <span id="welcome-msg" style="border:1px solid #ccc; padding:4px; min-width:200px; display:inline-block;">
     (none)
   </span>
 </p>
 
 <script>
+      (function () {
     // welcome message that reads from URL
   const params = new URLSearchParams(window.location.search);
   const msg = params.get('welcome');
@@ -18,6 +19,7 @@
     // dom based xss 
     document.getElementById('welcome-msg').innerHTML = msg;
   }
+    })();
 </script>
 
 <h2>All Posts</h2>
