@@ -100,7 +100,7 @@ app.get('/dashboard', (req, res) => {
 
   // if no welcome param, redirect with default msg
     if (!req.query.welcome) {
-    const defaultWelcome = 'Welcome!';
+    const defaultWelcome = 'The best view comes after the hardest climb!';
     const encoded = encodeURIComponent(defaultWelcome);
     return res.redirect('/dashboard?welcome=' + encoded);
   }
