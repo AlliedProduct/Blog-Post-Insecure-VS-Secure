@@ -1,6 +1,26 @@
 <%- include('layout', { body: '' }) %>
 
-<h1>Dashboard</h1>
+<h1>Dashboard (Secure)</h1>
+
+<p>
+  <strong>Quote of the day:</strong>
+  <span id="welcome-msg" style="border:1px solid #ccc; padding:4px; min-width:200px; display:inline-block;">
+    (none)
+  </span>
+</p>
+
+<script>
+      (function () {
+    // welcome message that reads from URL
+  const params = new URLSearchParams(window.location.search);
+  const msg = params.get('welcome');
+    console.log('welcome param =', msg); // temporary
+  if (msg) {
+    // use textContent to prevent dom xss
+    document.getElementById('welcome-msg').textContent = msg;
+  }
+    })();
+</script>
 
 <h2>All Posts</h2>
 

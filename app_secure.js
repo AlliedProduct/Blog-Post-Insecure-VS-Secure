@@ -170,6 +170,13 @@ app.post('/login', (req, res) => {
 
 // dashboard that still shows posts, but templates will escape
 app.get('/dashboard', requireAuth, (req, res) => {
+
+if (!req.query.welcome) {
+    const defaultWelcome = `A day without ${req.session.user.username}, is a bad day!`;
+    const encoded = encodeURIComponent(defaultWelcome);
+    return res.redirect('/dashboard?welcome=' + encoded);
+  }
+
   db.all(`
     SELECT posts.*, users.username
     FROM posts
