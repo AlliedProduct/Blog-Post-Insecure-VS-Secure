@@ -2,6 +2,18 @@
 
 <h1>Dashboard</h1>
 
+<p id="welcome-msg"></p>
+
+<script>
+  // welcome message that reads from URL
+  const params = new URLSearchParams(window.location.search);
+  const msg = params.get('welcome');
+  if (msg) {
+    // dom xss, uses innerhtml with untrusted data
+    document.getElementById('welcome-msg').innerHTML = msg;
+  }
+</script>
+
 <h2>All Posts</h2>
 
 <% posts.forEach(function(post) { %>
