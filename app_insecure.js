@@ -21,7 +21,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
   cookie: {
-    // no httponly, no secure and no samesite flags
+    httpOnly: false, // insecure allow js access
   }
 }));
 
