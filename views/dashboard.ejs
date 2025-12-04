@@ -8,6 +8,7 @@
     // welcome message that reads from URL
   const params = new URLSearchParams(window.location.search);
   const msg = params.get('welcome');
+    console.log('welcome param =', msg); // temporary
   if (msg) {
     // dom based xss 
     document.getElementById('welcome-msg').innerHTML = msg;
