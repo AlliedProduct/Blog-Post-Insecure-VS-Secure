@@ -26,13 +26,13 @@ npm install
 
 ### 2. Switch to the version you want to run
 - Insecure version
-git checkout insecure
-npm run start:insecure
+- git checkout insecure
+- npm run start:insecure
 
 App will be available @ http://localhost:3000
 
 - Secure version
-git checkout secure
-npm run start:secure
+- git checkout secure
+- npm run start:secure
 
 App will be available @ http://localhost:3001
