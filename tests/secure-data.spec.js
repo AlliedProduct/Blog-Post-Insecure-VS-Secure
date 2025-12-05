@@ -29,6 +29,8 @@ const { test, expect } = require('@playwright/test');
       await dialog.dismiss();
     });
 
+    await page.goto(`${baseUrl}/posts/create`);
+
     // posting malicious payload 
     await page.fill(
       'textarea[name="content"]',

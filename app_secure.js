@@ -8,7 +8,7 @@ const bcrypt = require('bcrypt');
 const db = require('./db');
 
 const app = express();
-const PORT = 3001; // different port than insecure app so i can run both at same time
+const PORT = 3001;
 
 // views 
 app.set('view engine', 'ejs');
@@ -29,7 +29,6 @@ app.use(session({
   saveUninitialized: false,
   cookie: {
     httpOnly: true,
-    // secure: true, enable when running over HTTPS
     sameSite: 'lax',
     maxAge: 20 * 60 * 1000 // 20 mins
   }
