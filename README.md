@@ -1,5 +1,5 @@
 # Blog-Post-Insecure-VS-Secure
-This repository contains a simple blog application with two iversions:
+This repository contains a simple blog application with two versions:
 
 - **insecure** – an intentionally vulnerable version  
 - **secure** – a hardened version with security controls  
