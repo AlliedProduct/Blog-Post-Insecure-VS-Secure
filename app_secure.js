@@ -291,10 +291,6 @@ app.get('/search', requireAuth, (req, res) => {
   res.render('search', { q });
 });
 
-// dom xss / use textContent not innerHTML
-app.get('/domxss', requireAuth, (req, res) => {
-  res.render('domxss');
-});
 
 // logout with logging
 app.get('/logout', (req, res) => {
