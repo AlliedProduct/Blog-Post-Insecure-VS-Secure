@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // scure session config
 app.use(session({
-  secret: 'change_this_to_a_long_random_string',
+  secret: 'thisisaS3cureS3cret!',
   resave: false,
   saveUninitialized: false,
   cookie: {
@@ -77,7 +77,7 @@ app.get('/', (req, res) => {
   res.redirect('/dashboard');
 });
 
-// register with hashed password, no role selection
+// register with hashed password
 app.get('/register', (req, res) => {
   res.render('register', { error: null });
 });
